@@ -1,0 +1,27 @@
+@{
+    List<Chef> LocalList = ViewBag.Chefs;
+}
+
+<div>
+    <h2>All Chefs</h2>
+    <table class="w-100 table table-striped">
+        <thead>
+            <tr class="row">
+                <th class="col">Chef Name</th>
+                <th class="col">Chefs Age</th>
+                <th class="col"># of Dishes</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Chef chef in Model)
+            {
+                int age = DateTime.Today.Year - chef.DateOfBirth.Year;
+                <tr class="row">
+                    <td class="col"><a href="chef/@chef.ChefID">@chef.FirstName @chef.LastName</a></td>
+                    <td class="col">@age</td>
+                    <td class="col">@chef.CreatedDishes.Count()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

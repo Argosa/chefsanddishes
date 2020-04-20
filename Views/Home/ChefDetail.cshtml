@@ -1,0 +1,11 @@
+@model Chef
+@{
+    Chef currentChef = ViewBag.CurrentChef;
+    int dishCount = ViewBag.ChefCount;
+}
+
+<div>
+    <h3>@currentChef.FirstName</h3>
+    <h3>@currentChef.LastName</h3>
+    <h4><b>Count:</b> @dishCount</h4>
+</div>
